@@ -1,9 +1,12 @@
 /** \file main.cpp
- * This is my first Qt project. The source is modified "Hello World"
- * from some lessons on youtube.
+ * This is my first Qt project.
+ * The source is modified "Hello Qt" from "C++ GUI programming with Qt 4"
  *
  * Author: Andrei Tihonovschi
  * Date:   04.01.2017
+ *
+ * Modified: 05.01.2017
+ *
  * */
 
 #include <QApplication>
@@ -22,7 +25,7 @@ const char *DEFAULT_TEXT = "<span style=\"color: red\">Hello world!</span>";
 class MyQApp:public QApplication
 {
 private:
-    QLabel *lbl; //!< QLabel which will display the greetings text
+    QLabel *label; //!< QLabel which will display the greetings text
 
 public:
     MyQApp(int argc, char **argv): QApplication(argc, argv), lbl(NULL)
@@ -33,15 +36,15 @@ public:
             txt = argv[1];
 
         // create and show QLabel window
-        lbl = new QLabel(txt);
-        lbl->show();
+        label = new QLabel(txt);
+        label->show();
     }
 
     ~MyQApp()
     {
         // delete QLabel, if it was created
-        if(lbl)
-            delete lbl;
+        if(label)
+            delete label;
     }
 };
 
